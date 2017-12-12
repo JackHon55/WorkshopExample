@@ -14,6 +14,10 @@ def test_integrate_point():
     xs, ys = np.zeros(10) + 1, np.linspace(0,10,10)
     assert integrate_trapz(xs, ys) == 0
 
+def test_integrate_string():
+    xs, ys = np.asarray(['Hello','how','are','you']),np.linspace(0,10,10)
+    assert integrate_trapz(xs,ys) == 10
+
 # Testing too much - ensuring it fails on weird input
 # Normally this would be an AssertionException or a specific
 # exception, not the general Exception class.
