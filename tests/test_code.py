@@ -9,6 +9,10 @@ def test_integrate_trapz_1():
     xs, ys = np.linspace(0, 10, 10), np.zeros(10)
     assert integrate_trapz(xs, ys) == 0
 
+# Test a point function
+def test_integrate_point():
+    xs, ys = np.zeros(10) + 1, np.linspace(0,10,10)
+    assert integrate_trapz(xs, ys) == 0
 
 # Testing too much - ensuring it fails on weird input
 # Normally this would be an AssertionException or a specific
